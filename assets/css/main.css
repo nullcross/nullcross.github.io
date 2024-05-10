@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&family=Tenor+Sans&display=swap");
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -32,6 +32,7 @@
   --color-background-2: #4b4b4b;
   --color-background-3: #505050;
   --color-border: rgba(96, 96, 96, 0.75);
+  --color-logo: #ababab;
   --color-accent: #998d67;
   --color-accent-2: #757060;
   --color-accent-3: #8c8b87;
@@ -48,7 +49,7 @@
 
 /* #region Template's Initial Rules */
 
-/* #region [Holistic/Unsorted] */
+/* #region [Holistic/Uncategorized] */
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -2852,7 +2853,8 @@ button:disabled,
 
 /* #endregion */
 
-/* #region Posts */
+/* Disabled; re-add the asterisk to the right of the region to restore */
+/* #region Posts /
 
 .posts {
   display: -moz-flex;
@@ -3648,6 +3650,125 @@ button:disabled,
 
 /* #region Custom Rules */
 
-/* Empty for now... */
+/* #region General */
+
+#main > .inner {
+  max-width: 88em;
+}
+
+#main > .inner > section {
+  padding: 4em 0 2em 0;
+}
+
+@media screen and (max-width: 736px) {
+  #main > .inner > section {
+    padding: 3em 0 1em 0;
+  }
+}
+
+/* #endregion */
+
+/* #region Header */
+
+#header {
+  border-width: 3px;
+}
+
+#header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+#header .logo:hover {
+  filter: brightness(133%);
+}
+
+#header .logo img {
+  height: 1.5em;
+}
+
+#header .logo strong {
+  font-family: "Tenor Sans", serif;
+  color: var(--color-logo);
+}
+
+/* #endregion */
+
+/* #region Banner */
+
+/* Make header less large */
+#banner h1 {
+  font-family: "Tenor Sans", serif;
+  font-size: 2em;
+}
+
+/* Reduce padding on all banner p's but the last one */
+#banner p {
+  margin-bottom: 0.8em;
+}
+
+#banner p:last-of-type {
+  margin-bottom: 2em;
+}
+
+/* Make buttons a grid instead of an overflow-prone flexbox */
+#banner ul.actions {
+  margin-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+#banner ul.actions li {
+  padding-left: 0;
+}
+
+/* Will need adjustment if I add more things to banner's action list */
+#banner ul.actions li:last-child:nth-child(odd) {
+  grid-column: span 2;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* #endregion */
+
+/* #region Posts */
+
+.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+@media screen and (max-width: 736px) {
+  .posts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.posts article {
+  background-color: var(--color-background-3);
+  border-radius: 8px;
+  padding: 3em;
+}
+
+.posts article .image {
+  display: block;
+  margin: 0 0 1em 0;
+}
+
+.posts article .image img {
+  display: block;
+  width: 100%;
+}
+
+.posts article .actions {
+  margin-bottom: 0;
+}
+
+/* #endregion */
 
 /* #endregion */
